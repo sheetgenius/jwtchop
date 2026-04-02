@@ -35,63 +35,6 @@
   }
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a JWT?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A JSON Web Token (JWT) is a compact, URL-safe token format used for authentication and information exchange. It consists of three base64url-encoded parts separated by dots: a header (algorithm + type), a payload (claims), and a signature."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it safe to paste my JWT here?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. jwtchop is entirely browser-side. Your token never leaves your device — there are no server requests, no logging, and no analytics on the token content. The decoding is done with plain JavaScript in your browser."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can jwtchop verify the signature?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "jwtchop decodes and displays the signature but does not verify it — signature verification requires the secret key or public key, which you should never paste into a web tool. jwtchop shows you the algorithm and lets you verify the signature in your own environment."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What algorithms does jwtchop support?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "jwtchop decodes tokens signed with any algorithm — HS256, HS384, HS512, RS256, RS384, RS512, ES256, ES384, ES512, and PS256/PS384/PS512. Decoding is algorithm-agnostic since it only reads the base64url-encoded header and payload."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why is my token showing as expired?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The exp claim in the payload contains a Unix timestamp (seconds since Jan 1, 1970). If that timestamp is in the past relative to your current local time, the token is expired. This is expected for tokens retrieved from logs or old sessions. Request a fresh token from your auth provider."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's the difference between iat and nbf?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "iat (Issued At) is when the token was created. nbf (Not Before) is when the token becomes valid — useful for tokens that are created in advance but shouldn't be used yet. A token can have both: issued now, valid in 5 minutes, expires in 1 hour."
-        }
-      }
-    ]
-  }
-  </script>
-
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EV4J23B6SP"></script>
   <script>
